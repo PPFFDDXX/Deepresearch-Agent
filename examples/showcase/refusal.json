@@ -1,0 +1,371 @@
+{
+  "mode": "offline_fixture",
+  "research_context": {
+    "scope": "document_grounded",
+    "demo_source_locators": [
+      "PROJECT_ROOT\\examples\\doc\\01-company-overview.md",
+      "PROJECT_ROOT\\examples\\doc\\02-knowledge-policy-current.md",
+      "PROJECT_ROOT\\examples\\doc\\03-pilot-results.md",
+      "PROJECT_ROOT\\examples\\doc\\04-pilot-budget.txt"
+    ],
+    "requirement_checks": true
+  },
+  "report_coverage": [],
+  "user_query": "根据虚构演示资料，星澜科技的融资金额是多少？资料未提供时明确说明。",
+  "research_plan": {
+    "tasks": [
+      {
+        "id": "task-1",
+        "question": "根据虚构演示资料，星澜科技的融资金额是多少？资料未提供时明确说明。",
+        "query": "星澜科技融资金额",
+        "tool": "retrieve_documents",
+        "addresses_task_ids": [],
+        "requirements": [
+          {
+            "id": "req-1",
+            "description": "星澜科技融资金额"
+          }
+        ],
+        "refinement_origin": "planner"
+      },
+      {
+        "id": "retry-1-task-1",
+        "question": "星澜科技融资金额",
+        "query": "星澜科技融资金额 详细规定 原文",
+        "tool": "retrieve_documents",
+        "addresses_task_ids": [
+          "task-1"
+        ],
+        "requirements": [
+          {
+            "id": "req-1",
+            "description": "星澜科技融资金额"
+          }
+        ],
+        "refinement_origin": "automatic"
+      },
+      {
+        "id": "retry-2-task-1",
+        "question": "星澜科技融资金额",
+        "query": "星澜科技融资金额 具体内容 章节",
+        "tool": "retrieve_documents",
+        "addresses_task_ids": [
+          "task-1",
+          "retry-1-task-1"
+        ],
+        "requirements": [
+          {
+            "id": "req-1",
+            "description": "星澜科技融资金额"
+          }
+        ],
+        "refinement_origin": "automatic"
+      }
+    ],
+    "scope_audit": [
+      {
+        "question": "根据虚构演示资料，星澜科技的融资金额是多少？资料未提供时明确说明。",
+        "kept": true,
+        "reason": "Fixed showcase question explicitly requests this topic",
+        "requirements": [
+          {
+            "description": "星澜科技融资金额",
+            "kept": true,
+            "reason": "Explicit showcase requirement"
+          }
+        ]
+      }
+    ]
+  },
+  "current_task": null,
+  "search_results": [
+    {
+      "id": "result-8e140a046ad8ec9b042bd8aa74cb0a2939725eeff7e730c8d3e86be62ab58cf8",
+      "task_id": "task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "# 星澜科技企业概况\n\n> 虚构演示文档：企业、人员、产品和数据均为人工编写，仅用于 Phase 9 本地检索测试。\n\n- 文档编号：XL-OV-001\n- 版本：1.0\n- 发布日期：2026-08-01\n- 维护部门：运营部"
+    },
+    {
+      "id": "result-7676c2b24ab455d80d071a084412676f7aa1f0053255d3bbd6d4580449a86866",
+      "task_id": "task-1",
+      "citation_id": "source-a7cf0c618e21dfe4e634c560a6c5b1012abef4078a5eeb16a0d111d287d390c0",
+      "snippet": "## 3. 遗留问题\n\n3 个有答案问题未命中依据，原因是相关条款被切分到不同片段。5 个有答案问题回答错误，其中 2 个发生在已命中依据的情况下。1 个无答案问题错误生成了公司融资金额。来源标注率只衡量是否附有来源，不证明来源支持回答内容。"
+    },
+    {
+      "id": "result-503fc6dc1e2decec02aae941861c1a70525727941ca7b245582e6d786e3db101",
+      "task_id": "task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "## 1. 企业与产品\n\n星澜科技是一家虚构的企业软件公司，共有 80 名员工。公司研发的产品名为“知舟”，面向企业内部知识问答，支持导入 Markdown、TXT 和 PDF 文档。知舟通过检索文档片段生成回答，并展示来源文件和片段位置。"
+    },
+    {
+      "id": "result-66f8a3e12f78f506bb8755ac7dad9e1f28ede6fb6941781159f6390108a4bb22",
+      "task_id": "task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "## 4. 信息边界\n\n本文件没有提供营业收入、利润、融资情况或客户名单。员工总数与试点用户数是不同统计口径，不能相互替代。"
+    },
+    {
+      "id": "result-7cb72e6a9f7add61e9441f224a936bd72335b3dfdf0812d75fd7ea6b5871f45b",
+      "task_id": "retry-1-task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "# 星澜科技企业概况\n\n> 虚构演示文档：企业、人员、产品和数据均为人工编写，仅用于 Phase 9 本地检索测试。\n\n- 文档编号：XL-OV-001\n- 版本：1.0\n- 发布日期：2026-08-01\n- 维护部门：运营部"
+    },
+    {
+      "id": "result-15d8c0fa4504d5e28c0c1736c29b9e5268e738347e34d11319512a567d82b98b",
+      "task_id": "retry-1-task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "## 1. 企业与产品\n\n星澜科技是一家虚构的企业软件公司，共有 80 名员工。公司研发的产品名为“知舟”，面向企业内部知识问答，支持导入 Markdown、TXT 和 PDF 文档。知舟通过检索文档片段生成回答，并展示来源文件和片段位置。"
+    },
+    {
+      "id": "result-41ae8bb00c0e44b94e46188232b1596aaf62824bb7a641c40235f911f16bebf8",
+      "task_id": "retry-1-task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "## 4. 信息边界\n\n本文件没有提供营业收入、利润、融资情况或客户名单。员工总数与试点用户数是不同统计口径，不能相互替代。"
+    },
+    {
+      "id": "result-08250b272223bfaf39fda89f59d3775592a9cc85bb5a0852a1da38190416887e",
+      "task_id": "retry-1-task-1",
+      "citation_id": "source-a7cf0c618e21dfe4e634c560a6c5b1012abef4078a5eeb16a0d111d287d390c0",
+      "snippet": "## 3. 遗留问题\n\n3 个有答案问题未命中依据，原因是相关条款被切分到不同片段。5 个有答案问题回答错误，其中 2 个发生在已命中依据的情况下。1 个无答案问题错误生成了公司融资金额。来源标注率只衡量是否附有来源，不证明来源支持回答内容。"
+    },
+    {
+      "id": "result-35c9bb53dd96e96a0035dbb15e842954d0c13bcc7d2ed19d0eae0bea84ce6f0b",
+      "task_id": "retry-2-task-1",
+      "citation_id": "source-a7cf0c618e21dfe4e634c560a6c5b1012abef4078a5eeb16a0d111d287d390c0",
+      "snippet": "## 3. 遗留问题\n\n3 个有答案问题未命中依据，原因是相关条款被切分到不同片段。5 个有答案问题回答错误，其中 2 个发生在已命中依据的情况下。1 个无答案问题错误生成了公司融资金额。来源标注率只衡量是否附有来源，不证明来源支持回答内容。"
+    },
+    {
+      "id": "result-89a984d17e407a0103f536342bdf7c4b4629caf684f2ae486b0c50eef79cd08e",
+      "task_id": "retry-2-task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "# 星澜科技企业概况\n\n> 虚构演示文档：企业、人员、产品和数据均为人工编写，仅用于 Phase 9 本地检索测试。\n\n- 文档编号：XL-OV-001\n- 版本：1.0\n- 发布日期：2026-08-01\n- 维护部门：运营部"
+    },
+    {
+      "id": "result-66df9505fd21df275452590242b41e211a0caec43544460c8a8dfb1fe0244e6e",
+      "task_id": "retry-2-task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "## 1. 企业与产品\n\n星澜科技是一家虚构的企业软件公司，共有 80 名员工。公司研发的产品名为“知舟”，面向企业内部知识问答，支持导入 Markdown、TXT 和 PDF 文档。知舟通过检索文档片段生成回答，并展示来源文件和片段位置。"
+    },
+    {
+      "id": "result-a218791c4d813a3b5929471fcbebe45b9eb18e13df8f700a2caf3e8dcc67f44d",
+      "task_id": "retry-2-task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "## 4. 信息边界\n\n本文件没有提供营业收入、利润、融资情况或客户名单。员工总数与试点用户数是不同统计口径，不能相互替代。"
+    }
+  ],
+  "evidence": [],
+  "citations": [
+    {
+      "id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "title": "星澜科技企业概况",
+      "source_type": "local",
+      "locator": "PROJECT_ROOT\\examples\\doc\\01-company-overview.md"
+    },
+    {
+      "id": "source-a7cf0c618e21dfe4e634c560a6c5b1012abef4078a5eeb16a0d111d287d390c0",
+      "title": "知舟试点验收记录",
+      "source_type": "local",
+      "locator": "PROJECT_ROOT\\examples\\doc\\03-pilot-results.md"
+    }
+  ],
+  "retry_count": 2,
+  "final_report": "# Research Report\n\nResearch question: 根据虚构演示资料，星澜科技的融资金额是多少？资料未提供时明确说明。\n\nResearch status: insufficient\n\n> REPORT UNAVAILABLE\n\n## Executive Summary\n\nNo evidence was cleared for writing; a grounded answer cannot be generated.\n\n## Key Findings\n\nNo evidence was cleared for writing; a grounded answer cannot be generated.\n\n## Detailed Analysis\n\nNo evidence was cleared for writing; a grounded answer cannot be generated.\n\n## Conclusion\n\nNo evidence was cleared for writing; a grounded answer cannot be generated.\n\n## Limitations\n\n- Critic scores and acceptance are heuristic assessments, not fact verification.\n- Evidence is incomplete or evaluation failed; this is not a conclusive answer.\n- No evidence was cleared for report generation.\n- Missing topic (Critic assessment): 请求金额未提供\n- Uncovered task: 根据虚构演示资料，星澜科技的融资金额是多少？资料未提供时明确说明。\n- Uncovered task: 星澜科技融资金额\n- Uncovered task: 星澜科技融资金额\n- Uncovered requirement: 星澜科技融资金额\n- Uncovered requirement: 星澜科技融资金额\n- Uncovered requirement: 星澜科技融资金额\n- Critic concern: OFFLINE FIXTURE: scores and judgments are scripted, not model\\-quality results\n- Critic concern: No accepted evidence covers tasks: task\\-1, retry\\-1\\-task\\-1, retry\\-2\\-task\\-1\n- Critic concern: No candidate evidence survived this review\n\n## Sources / Citations\n\nNo sources cited: no validated report content was published.\n",
+  "research_outcomes": [
+    {
+      "id": "outcome-9e1758ae6092f36d45e0d8bf85e92b674422e82ecf5ef8aa8a8eb80a531e83f3",
+      "task_id": "task-1",
+      "round": 0,
+      "status": "no_evidence",
+      "message": "No relevant evidence found in materials",
+      "retrieval_attempts": [
+        {
+          "query": "星澜科技融资金额",
+          "result_count": 4,
+          "status": "success",
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "id": "outcome-64ef1096cc065c55d9c1d67acea05eb8e54dbb83935f3091ec4bfa64ccd13642",
+      "task_id": "retry-1-task-1",
+      "round": 1,
+      "status": "no_evidence",
+      "message": "No relevant evidence found in materials",
+      "retrieval_attempts": [
+        {
+          "query": "星澜科技融资金额 详细规定 原文",
+          "result_count": 4,
+          "status": "success",
+          "error_code": null
+        }
+      ]
+    },
+    {
+      "id": "outcome-d60733db44d42f865b1991480d2abc64a912bd95ca6203f520eb564bdd069c45",
+      "task_id": "retry-2-task-1",
+      "round": 2,
+      "status": "no_evidence",
+      "message": "No relevant evidence found in materials",
+      "retrieval_attempts": [
+        {
+          "query": "星澜科技融资金额 具体内容 章节",
+          "result_count": 4,
+          "status": "success",
+          "error_code": null
+        }
+      ]
+    }
+  ],
+  "critic_assessments": [
+    {
+      "id": "assessment-0",
+      "round": 0,
+      "completeness": 0.5,
+      "relevance": 1.0,
+      "source_quality": 1.0,
+      "missing_topics": [
+        "请求金额未提供"
+      ],
+      "concerns": [
+        "OFFLINE FIXTURE: scores and judgments are scripted, not model-quality results",
+        "No accepted evidence covers tasks: task-1",
+        "No candidate evidence survived this review",
+        "Application generated targeted refinements for uncovered requirements"
+      ],
+      "evidence_issues": [],
+      "accepted_evidence_ids": [],
+      "uncovered_task_ids": [
+        "task-1"
+      ],
+      "sufficient": false,
+      "decision": "retry",
+      "summary": "Deterministic showcase",
+      "requirement_coverage": [
+        {
+          "task_id": "task-1",
+          "requirement_id": "req-1",
+          "evidence_ids": [],
+          "covered": false,
+          "reason": "Requested amount not provided"
+        }
+      ],
+      "diagnostics": [],
+      "scope_audit": []
+    },
+    {
+      "id": "assessment-1",
+      "round": 1,
+      "completeness": 0.5,
+      "relevance": 1.0,
+      "source_quality": 1.0,
+      "missing_topics": [
+        "请求金额未提供"
+      ],
+      "concerns": [
+        "OFFLINE FIXTURE: scores and judgments are scripted, not model-quality results",
+        "No accepted evidence covers tasks: task-1, retry-1-task-1",
+        "No candidate evidence survived this review",
+        "Application generated targeted refinements for uncovered requirements"
+      ],
+      "evidence_issues": [],
+      "accepted_evidence_ids": [],
+      "uncovered_task_ids": [
+        "task-1",
+        "retry-1-task-1"
+      ],
+      "sufficient": false,
+      "decision": "retry",
+      "summary": "Deterministic showcase",
+      "requirement_coverage": [
+        {
+          "task_id": "task-1",
+          "requirement_id": "req-1",
+          "evidence_ids": [],
+          "covered": false,
+          "reason": "Requested amount not provided"
+        },
+        {
+          "task_id": "retry-1-task-1",
+          "requirement_id": "req-1",
+          "evidence_ids": [],
+          "covered": false,
+          "reason": "Requested amount not provided"
+        }
+      ],
+      "diagnostics": [],
+      "scope_audit": []
+    },
+    {
+      "id": "assessment-2",
+      "round": 2,
+      "completeness": 0.5,
+      "relevance": 1.0,
+      "source_quality": 1.0,
+      "missing_topics": [
+        "请求金额未提供"
+      ],
+      "concerns": [
+        "OFFLINE FIXTURE: scores and judgments are scripted, not model-quality results",
+        "No accepted evidence covers tasks: task-1, retry-1-task-1, retry-2-task-1",
+        "No candidate evidence survived this review"
+      ],
+      "evidence_issues": [],
+      "accepted_evidence_ids": [],
+      "uncovered_task_ids": [
+        "task-1",
+        "retry-1-task-1",
+        "retry-2-task-1"
+      ],
+      "sufficient": false,
+      "decision": "exhausted",
+      "summary": "Deterministic showcase",
+      "requirement_coverage": [
+        {
+          "task_id": "task-1",
+          "requirement_id": "req-1",
+          "evidence_ids": [],
+          "covered": false,
+          "reason": "Requested amount not provided"
+        },
+        {
+          "task_id": "retry-1-task-1",
+          "requirement_id": "req-1",
+          "evidence_ids": [],
+          "covered": false,
+          "reason": "Requested amount not provided"
+        },
+        {
+          "task_id": "retry-2-task-1",
+          "requirement_id": "req-1",
+          "evidence_ids": [],
+          "covered": false,
+          "reason": "Requested amount not provided"
+        }
+      ],
+      "diagnostics": [],
+      "scope_audit": []
+    }
+  ],
+  "research_status": "insufficient",
+  "report_status": "no_evidence",
+  "report_draft": null,
+  "report_citations": [],
+  "report_error": null,
+  "evaluation": {
+    "state_valid": true,
+    "rendering_consistent": null,
+    "task_execution_success_rate": 0.0,
+    "critic_task_coverage": 0.0,
+    "candidate_evidence_count": 0,
+    "accepted_evidence_count": 0,
+    "evidence_issue_count": 0,
+    "report_paragraph_citation_coverage": null,
+    "report_source_count": 0,
+    "retry_count": 2,
+    "research_status": "insufficient",
+    "report_status": "no_evidence",
+    "semantic_support_verified": false,
+    "requirement_checks_enabled": true,
+    "report_requirement_coverage": null
+  }
+}

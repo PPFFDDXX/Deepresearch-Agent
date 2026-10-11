@@ -1,0 +1,20 @@
+services:
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: deepresearch-agent:local
+    init: true
+    env_file:
+      - .env
+    environment:
+      # Override possible Windows paths from the host .env.
+      DR_TRACE_FILE: /app/reports/api-trace.jsonl
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - reports:/app/reports
+    stop_grace_period: 10m
+
+volumes:
+  reports:

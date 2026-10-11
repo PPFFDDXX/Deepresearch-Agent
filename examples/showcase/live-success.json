@@ -1,0 +1,26 @@
+{
+  "mode": "user_live_snapshot",
+  "job_id": "9ed8075c-23c1-43e1-9e05-a8a4532213b6",
+  "run_id": "c4f51cd6-e7b5-41f6-94a7-294693cf4c96",
+  "research_status": "sufficient",
+  "report_status": "generated",
+  "evaluation": {
+    "state_valid": true,
+    "rendering_consistent": true,
+    "task_execution_success_rate": 1.0,
+    "critic_task_coverage": 1.0,
+    "candidate_evidence_count": 10,
+    "accepted_evidence_count": 10,
+    "evidence_issue_count": 0,
+    "report_paragraph_citation_coverage": 1.0,
+    "report_source_count": 3,
+    "retry_count": 0,
+    "research_status": "sufficient",
+    "report_status": "generated",
+    "semantic_support_verified": false,
+    "requirement_checks_enabled": true,
+    "report_requirement_coverage": 1.0
+  },
+  "report": "live-success.md",
+  "new_provider_calls": false
+}

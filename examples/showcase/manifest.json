@@ -1,0 +1,32 @@
+{
+  "mode": "offline_fixture",
+  "model": "scripted",
+  "embedding": "lexical_hashing",
+  "semantic_support_verified": false,
+  "cases": [
+    {
+      "id": "success",
+      "research_status": "sufficient",
+      "report_status": "generated",
+      "retry_count": 0,
+      "report": "success.md",
+      "audit": "success.json"
+    },
+    {
+      "id": "partial",
+      "research_status": "insufficient",
+      "report_status": "partial",
+      "retry_count": 2,
+      "report": "partial.md",
+      "audit": "partial.json"
+    },
+    {
+      "id": "refusal",
+      "research_status": "insufficient",
+      "report_status": "no_evidence",
+      "retry_count": 2,
+      "report": "refusal.md",
+      "audit": "refusal.json"
+    }
+  ]
+}

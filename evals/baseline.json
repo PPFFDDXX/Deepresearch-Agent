@@ -1,0 +1,12 @@
+{
+  "name": "knowledge-pilot-baseline",
+  "documents": ["../examples/doc"],
+  "cases": [
+    {"id":"current_policy","query":"现行知识库文档复核周期和审计日志保留时间是什么？","retrieval_query":"现行规范文档复核周期和审计日志保留时间","expected_source":"02-knowledge-policy-current.md","expected_terms":["30","180"],"forbidden_terms":["每60天","保留90天"]},
+    {"id":"pilot_budget","query":"三个月知舟试点预算上限是多少？是否代表实际支出？","retrieval_query":"三个月试点预算上限 人民币","expected_source":"04-pilot-budget.txt","expected_terms":["18,000"],"forbidden_terms":["实际支出为18000"]},
+    {"id":"pilot_results","query":"有答案问题的检索命中率和回答正确率分别是多少？","retrieval_query":"有答案问题检索命中率 回答正确率 实测","expected_source":"03-pilot-results.md","expected_terms":["92.5%","87.5%"]},
+    {"id":"company_scope","query":"星澜科技有多少员工，知舟试点覆盖多少用户？","retrieval_query":"员工总数 试点用户 80 30","expected_source":"01-company-overview.md","expected_terms":["80","30"]},
+    {"id":"historical_policy","query":"历史版本知识库规范要求多久复核、审计日志保留多久？","retrieval_query":"历史留存规定 每60天复核 审计日志90天","expected_source":"05-knowledge-policy-archived.md","expected_terms":["60","90"],"include_archived":true},
+    {"id":"unknown_financing","query":"星澜科技融资金额是多少？如果资料没有提供请明确说明。","retrieval_query":"融资金额 没有提供","expect_refusal":true,"forbidden_terms":["融资100万元","融资金额为100万"]}
+  ]
+}

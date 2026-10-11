@@ -1,0 +1,396 @@
+{
+  "mode": "offline_fixture",
+  "research_context": {
+    "scope": "document_grounded",
+    "demo_source_locators": [
+      "PROJECT_ROOT\\examples\\doc\\01-company-overview.md",
+      "PROJECT_ROOT\\examples\\doc\\02-knowledge-policy-current.md",
+      "PROJECT_ROOT\\examples\\doc\\03-pilot-results.md",
+      "PROJECT_ROOT\\examples\\doc\\04-pilot-budget.txt"
+    ],
+    "requirement_checks": true
+  },
+  "report_coverage": [
+    {
+      "task_id": "task-1",
+      "requirement_id": "req-1",
+      "paragraph_indices": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "covered": true,
+      "reason": "Golden fixture paragraph"
+    },
+    {
+      "task_id": "task-1",
+      "requirement_id": "req-2",
+      "paragraph_indices": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "covered": true,
+      "reason": "Golden fixture paragraph"
+    },
+    {
+      "task_id": "task-1",
+      "requirement_id": "req-3",
+      "paragraph_indices": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "covered": true,
+      "reason": "Golden fixture paragraph"
+    }
+  ],
+  "user_query": "根据虚构演示资料，说明试点预算上限、费用分项及预算是否等于实际支出。",
+  "research_plan": {
+    "tasks": [
+      {
+        "id": "task-1",
+        "question": "根据虚构演示资料，说明试点预算上限、费用分项及预算是否等于实际支出。",
+        "query": "试点预算上限 人民币",
+        "tool": "retrieve_documents",
+        "addresses_task_ids": [],
+        "requirements": [
+          {
+            "id": "req-1",
+            "description": "试点预算上限 人民币"
+          },
+          {
+            "id": "req-2",
+            "description": "预算分项 模型调用 检索服务 文档清理 预备金"
+          },
+          {
+            "id": "req-3",
+            "description": "预算不是实际支出"
+          }
+        ],
+        "refinement_origin": "planner"
+      }
+    ],
+    "scope_audit": [
+      {
+        "question": "根据虚构演示资料，说明试点预算上限、费用分项及预算是否等于实际支出。",
+        "kept": true,
+        "reason": "Fixed showcase question explicitly requests this topic",
+        "requirements": [
+          {
+            "description": "试点预算上限 人民币",
+            "kept": true,
+            "reason": "Explicit showcase requirement"
+          },
+          {
+            "description": "预算分项 模型调用 检索服务 文档清理 预备金",
+            "kept": true,
+            "reason": "Explicit showcase requirement"
+          },
+          {
+            "description": "预算不是实际支出",
+            "kept": true,
+            "reason": "Explicit showcase requirement"
+          }
+        ]
+      }
+    ]
+  },
+  "current_task": null,
+  "search_results": [
+    {
+      "id": "result-63aae486fd732306309919338542ccb2841a888aa59cdcb0bd85200bd4ca4eb1",
+      "task_id": "task-1",
+      "citation_id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "snippet": "第 1 节：预算范围\n预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。"
+    },
+    {
+      "id": "result-851f23fa7aaccf7fef9558701b380b9108fc8116969024fc8c62ce01bf48ccd3",
+      "task_id": "task-1",
+      "citation_id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "snippet": "第 2 节：预算分项\n模型调用预算：每月 2,000 元，三个月共 6,000 元。\n检索服务预算：每月 1,000 元，三个月共 3,000 元。\n文档清理预算：一次性 5,000 元。\n预备金：4,000 元。\n以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。"
+    },
+    {
+      "id": "result-8c8dbb48cc3acf0c3299f8efdcd658477d21b2bbda7f6f164bf2374a3c88416a",
+      "task_id": "task-1",
+      "citation_id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "snippet": "知舟试点预算说明\n虚构演示文档：所有金额均为合成数据，仅用于 Phase 9 本地检索测试。\n\n文档编号：XL-FIN-004\n版本：1.0\n发布日期：2026-08-20\n维护部门：财务部"
+    },
+    {
+      "id": "result-b5aa58cb9d30d648ac104acee29928bf51281cb628d21c1567dac742c8af2e26",
+      "task_id": "task-1",
+      "citation_id": "source-d5f1b5eaf6dee5ea56a6a9006fd1149709b5049657eb874d2a4b5deece514d64",
+      "snippet": "## 4. 更新与留存\n\n现行文档至少每 30 天复核一次。旧版本归入历史区，不参与默认现行知识检索；只有明确查询历史制度时才纳入。审计日志保留 180 天。删除知识库文件后，管理员应在 1 个工作日内清理对应索引。"
+    },
+    {
+      "id": "result-07ef718e896f44dc797b187fc9ec05391fac49c29559b74ef25c1bd94c9b4e46",
+      "task_id": "task-1",
+      "citation_id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "snippet": "第 3 节：审批与未知信息\n单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。"
+    },
+    {
+      "id": "result-6d5ae6670ad9b70957f9b1f1c172868d6d5b45813e72c5e51aba333320abf7f4",
+      "task_id": "task-1",
+      "citation_id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "snippet": "## 2. 试点范围\n\n2026 年第三季度的知舟试点覆盖客服部和研发部，共 30 名用户。试点仅使用模拟业务资料，不接入生产客户数据。产品负责人为林知远，安全负责人为陈予安。"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence-9c2f3a4692484780553ef6a6f704e568178c57b990cbc3de35d02211e3acb32d",
+      "task_id": "task-1",
+      "citation_id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "claim": "第 1 节：预算范围\n预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。",
+      "excerpt": "第 1 节：预算范围\n预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。",
+      "location": "section 第 1 节：预算范围; chars 1-101; chunk-2b41222fd7daf2dd35fe2f69bafb12c4832a8c66c15b05abb99f718329456e77; version 1.0",
+      "origin": "local_chunk"
+    },
+    {
+      "id": "evidence-5dd1342d831e67e836bf86df45e1b4e35320c0109d2a939eb9bcec70cbccbbf5",
+      "task_id": "task-1",
+      "citation_id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "claim": "第 2 节：预算分项\n模型调用预算：每月 2,000 元，三个月共 6,000 元。\n检索服务预算：每月 1,000 元，三个月共 3,000 元。\n文档清理预算：一次性 5,000 元。\n预备金：4,000 元。\n以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。",
+      "excerpt": "第 2 节：预算分项\n模型调用预算：每月 2,000 元，三个月共 6,000 元。\n检索服务预算：每月 1,000 元，三个月共 3,000 元。\n文档清理预算：一次性 5,000 元。\n预备金：4,000 元。\n以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。",
+      "location": "section 第 2 节：预算分项; chars 1-164; chunk-7e726be16e422715d601be7803525b5c32be7b1cd1beab4baf6e8ae3c6794a58; version 1.0",
+      "origin": "local_chunk"
+    },
+    {
+      "id": "evidence-5ac7dd7b44f1e204ba71462b9134329beee6640984027e71cc6517a0936da69d",
+      "task_id": "task-1",
+      "citation_id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "claim": "第 3 节：审批与未知信息\n单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。",
+      "excerpt": "第 3 节：审批与未知信息\n单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。",
+      "location": "section 第 3 节：审批与未知信息; chars 1-95; chunk-7f705c5f6b4ce7f26e1d591d778fd5692ad290a4257b476a5d06e9e4d472363f; version 1.0",
+      "origin": "local_chunk"
+    }
+  ],
+  "citations": [
+    {
+      "id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "title": "知舟试点预算说明",
+      "source_type": "local",
+      "locator": "PROJECT_ROOT\\examples\\doc\\04-pilot-budget.txt"
+    },
+    {
+      "id": "source-d5f1b5eaf6dee5ea56a6a9006fd1149709b5049657eb874d2a4b5deece514d64",
+      "title": "知舟知识库管理规范",
+      "source_type": "local",
+      "locator": "PROJECT_ROOT\\examples\\doc\\02-knowledge-policy-current.md"
+    },
+    {
+      "id": "source-a88473d080377b9ad612648327aebacd263ce646501b56302938bc9ae0127199",
+      "title": "星澜科技企业概况",
+      "source_type": "local",
+      "locator": "PROJECT_ROOT\\examples\\doc\\01-company-overview.md"
+    }
+  ],
+  "retry_count": 0,
+  "final_report": "# Research Report\n\nResearch question: 根据虚构演示资料，说明试点预算上限、费用分项及预算是否等于实际支出。\n\nResearch status: sufficient\n\n> 演示资料说明：涉及演示来源的结论仅描述虚构文档中的设定，不证明真实企业预算、支出或产品表现。\n\n## Executive Summary\n\n以下为虚构演示文档的设定：第 1 节：预算范围 预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。 [1]\n\n以下为虚构演示文档的设定：第 2 节：预算分项 模型调用预算：每月 2,000 元，三个月共 6,000 元。 检索服务预算：每月 1,000 元，三个月共 3,000 元。 文档清理预算：一次性 5,000 元。 预备金：4,000 元。 以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。 [1]\n\n以下为虚构演示文档的设定：第 3 节：审批与未知信息 单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。 [1]\n\n## Key Findings\n\n- 以下为虚构演示文档的设定：第 1 节：预算范围 预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。 [1]\n- 以下为虚构演示文档的设定：第 2 节：预算分项 模型调用预算：每月 2,000 元，三个月共 6,000 元。 检索服务预算：每月 1,000 元，三个月共 3,000 元。 文档清理预算：一次性 5,000 元。 预备金：4,000 元。 以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。 [1]\n- 以下为虚构演示文档的设定：第 3 节：审批与未知信息 单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。 [1]\n\n## Detailed Analysis\n\n### 虚构资料中的原文信息\n\n以下为虚构演示文档的设定：第 1 节：预算范围 预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。 [1]\n\n以下为虚构演示文档的设定：第 2 节：预算分项 模型调用预算：每月 2,000 元，三个月共 6,000 元。 检索服务预算：每月 1,000 元，三个月共 3,000 元。 文档清理预算：一次性 5,000 元。 预备金：4,000 元。 以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。 [1]\n\n以下为虚构演示文档的设定：第 3 节：审批与未知信息 单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。 [1]\n\n## Conclusion\n\n以下为虚构演示文档的设定：第 1 节：预算范围 预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。 [1]\n\n以下为虚构演示文档的设定：第 2 节：预算分项 模型调用预算：每月 2,000 元，三个月共 6,000 元。 检索服务预算：每月 1,000 元，三个月共 3,000 元。 文档清理预算：一次性 5,000 元。 预备金：4,000 元。 以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。 [1]\n\n以下为虚构演示文档的设定：第 3 节：审批与未知信息 单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。 [1]\n\n## Limitations\n\n- Critic scores and acceptance are heuristic assessments, not fact verification.\n- Critic concern: OFFLINE FIXTURE: scores and judgments are scripted, not model\\-quality results\n\n## Sources / Citations\n\n[1] 知舟试点预算说明 — PROJECT_ROOT\\\\examples\\\\doc\\\\04\\-pilot\\-budget.txt — section 第 1 节：预算范围; chars 1\\-101; chunk\\-2b41222fd7daf2dd35fe2f69bafb12c4832a8c66c15b05abb99f718329456e77; version 1.0; section 第 2 节：预算分项; chars 1\\-164; chunk\\-7e726be16e422715d601be7803525b5c32be7b1cd1beab4baf6e8ae3c6794a58; version 1.0; section 第 3 节：审批与未知信息; chars 1\\-95; chunk\\-7f705c5f6b4ce7f26e1d591d778fd5692ad290a4257b476a5d06e9e4d472363f; version 1.0\n",
+  "research_outcomes": [
+    {
+      "id": "outcome-9e1758ae6092f36d45e0d8bf85e92b674422e82ecf5ef8aa8a8eb80a531e83f3",
+      "task_id": "task-1",
+      "round": 0,
+      "status": "success",
+      "message": "Candidate evidence extracted; sufficiency is not evaluated",
+      "retrieval_attempts": [
+        {
+          "query": "试点预算上限 人民币",
+          "result_count": 4,
+          "status": "success",
+          "error_code": null
+        },
+        {
+          "query": "预算分项 模型调用 检索服务 文档清理 预备金",
+          "result_count": 4,
+          "status": "success",
+          "error_code": null
+        },
+        {
+          "query": "预算不是实际支出",
+          "result_count": 4,
+          "status": "success",
+          "error_code": null
+        }
+      ]
+    }
+  ],
+  "critic_assessments": [
+    {
+      "id": "assessment-0",
+      "round": 0,
+      "completeness": 1.0,
+      "relevance": 1.0,
+      "source_quality": 1.0,
+      "missing_topics": [],
+      "concerns": [
+        "OFFLINE FIXTURE: scores and judgments are scripted, not model-quality results"
+      ],
+      "evidence_issues": [],
+      "accepted_evidence_ids": [
+        "evidence-9c2f3a4692484780553ef6a6f704e568178c57b990cbc3de35d02211e3acb32d",
+        "evidence-5dd1342d831e67e836bf86df45e1b4e35320c0109d2a939eb9bcec70cbccbbf5",
+        "evidence-5ac7dd7b44f1e204ba71462b9134329beee6640984027e71cc6517a0936da69d"
+      ],
+      "uncovered_task_ids": [],
+      "sufficient": true,
+      "decision": "sufficient",
+      "summary": "Deterministic showcase",
+      "requirement_coverage": [
+        {
+          "task_id": "task-1",
+          "requirement_id": "req-1",
+          "evidence_ids": [
+            "evidence-9c2f3a4692484780553ef6a6f704e568178c57b990cbc3de35d02211e3acb32d"
+          ],
+          "covered": true,
+          "reason": "Golden passage found"
+        },
+        {
+          "task_id": "task-1",
+          "requirement_id": "req-2",
+          "evidence_ids": [
+            "evidence-5dd1342d831e67e836bf86df45e1b4e35320c0109d2a939eb9bcec70cbccbbf5"
+          ],
+          "covered": true,
+          "reason": "Golden passage found"
+        },
+        {
+          "task_id": "task-1",
+          "requirement_id": "req-3",
+          "evidence_ids": [
+            "evidence-9c2f3a4692484780553ef6a6f704e568178c57b990cbc3de35d02211e3acb32d"
+          ],
+          "covered": true,
+          "reason": "Golden passage found"
+        }
+      ],
+      "diagnostics": [],
+      "scope_audit": []
+    }
+  ],
+  "research_status": "sufficient",
+  "report_status": "generated",
+  "report_draft": {
+    "executive_summary": [
+      {
+        "text": "以下为虚构演示文档的设定：第 1 节：预算范围\n预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。",
+        "evidence_ids": [
+          "evidence-9c2f3a4692484780553ef6a6f704e568178c57b990cbc3de35d02211e3acb32d"
+        ]
+      },
+      {
+        "text": "以下为虚构演示文档的设定：第 2 节：预算分项\n模型调用预算：每月 2,000 元，三个月共 6,000 元。\n检索服务预算：每月 1,000 元，三个月共 3,000 元。\n文档清理预算：一次性 5,000 元。\n预备金：4,000 元。\n以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。",
+        "evidence_ids": [
+          "evidence-5dd1342d831e67e836bf86df45e1b4e35320c0109d2a939eb9bcec70cbccbbf5"
+        ]
+      },
+      {
+        "text": "以下为虚构演示文档的设定：第 3 节：审批与未知信息\n单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。",
+        "evidence_ids": [
+          "evidence-5ac7dd7b44f1e204ba71462b9134329beee6640984027e71cc6517a0936da69d"
+        ]
+      }
+    ],
+    "key_findings": [
+      {
+        "text": "以下为虚构演示文档的设定：第 1 节：预算范围\n预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。",
+        "evidence_ids": [
+          "evidence-9c2f3a4692484780553ef6a6f704e568178c57b990cbc3de35d02211e3acb32d"
+        ]
+      },
+      {
+        "text": "以下为虚构演示文档的设定：第 2 节：预算分项\n模型调用预算：每月 2,000 元，三个月共 6,000 元。\n检索服务预算：每月 1,000 元，三个月共 3,000 元。\n文档清理预算：一次性 5,000 元。\n预备金：4,000 元。\n以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。",
+        "evidence_ids": [
+          "evidence-5dd1342d831e67e836bf86df45e1b4e35320c0109d2a939eb9bcec70cbccbbf5"
+        ]
+      },
+      {
+        "text": "以下为虚构演示文档的设定：第 3 节：审批与未知信息\n单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。",
+        "evidence_ids": [
+          "evidence-5ac7dd7b44f1e204ba71462b9134329beee6640984027e71cc6517a0936da69d"
+        ]
+      }
+    ],
+    "detailed_analysis": [
+      {
+        "title": "虚构资料中的原文信息",
+        "paragraphs": [
+          {
+            "text": "以下为虚构演示文档的设定：第 1 节：预算范围\n预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。",
+            "evidence_ids": [
+              "evidence-9c2f3a4692484780553ef6a6f704e568178c57b990cbc3de35d02211e3acb32d"
+            ]
+          },
+          {
+            "text": "以下为虚构演示文档的设定：第 2 节：预算分项\n模型调用预算：每月 2,000 元，三个月共 6,000 元。\n检索服务预算：每月 1,000 元，三个月共 3,000 元。\n文档清理预算：一次性 5,000 元。\n预备金：4,000 元。\n以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。",
+            "evidence_ids": [
+              "evidence-5dd1342d831e67e836bf86df45e1b4e35320c0109d2a939eb9bcec70cbccbbf5"
+            ]
+          },
+          {
+            "text": "以下为虚构演示文档的设定：第 3 节：审批与未知信息\n单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。",
+            "evidence_ids": [
+              "evidence-5ac7dd7b44f1e204ba71462b9134329beee6640984027e71cc6517a0936da69d"
+            ]
+          }
+        ]
+      }
+    ],
+    "conclusion": [
+      {
+        "text": "以下为虚构演示文档的设定：第 1 节：预算范围\n预算适用于 2026 年 9 月至 11 月的三个月内部试点，覆盖企业概况中约定的 30 名试点用户。预算上限为人民币 18,000 元。预算不是实际支出，也不是公司营业收入。",
+        "evidence_ids": [
+          "evidence-9c2f3a4692484780553ef6a6f704e568178c57b990cbc3de35d02211e3acb32d"
+        ]
+      },
+      {
+        "text": "以下为虚构演示文档的设定：第 2 节：预算分项\n模型调用预算：每月 2,000 元，三个月共 6,000 元。\n检索服务预算：每月 1,000 元，三个月共 3,000 元。\n文档清理预算：一次性 5,000 元。\n预备金：4,000 元。\n以上四项合计 18,000 元。费用口径包含模型调用、检索服务和文档清理，不包含员工工资或生产环境部署费用。",
+        "evidence_ids": [
+          "evidence-5dd1342d831e67e836bf86df45e1b4e35320c0109d2a939eb9bcec70cbccbbf5"
+        ]
+      },
+      {
+        "text": "以下为虚构演示文档的设定：第 3 节：审批与未知信息\n单笔试点采购不超过 3,000 元时，由产品负责人林知远审批；超过 3,000 元时，还需财务负责人周映批准。本文没有记录任何实际支出，不能据此判断试点是否超支。",
+        "evidence_ids": [
+          "evidence-5ac7dd7b44f1e204ba71462b9134329beee6640984027e71cc6517a0936da69d"
+        ]
+      }
+    ]
+  },
+  "report_citations": [
+    {
+      "number": 1,
+      "citation_id": "source-11451ed1e6647af94a09b3e96c8a41defa13b1d44667cd74234e4e9fc430811c",
+      "title": "知舟试点预算说明",
+      "source_type": "local",
+      "locator": "PROJECT_ROOT\\examples\\doc\\04-pilot-budget.txt",
+      "locations": [
+        "section 第 1 节：预算范围; chars 1-101; chunk-2b41222fd7daf2dd35fe2f69bafb12c4832a8c66c15b05abb99f718329456e77; version 1.0",
+        "section 第 2 节：预算分项; chars 1-164; chunk-7e726be16e422715d601be7803525b5c32be7b1cd1beab4baf6e8ae3c6794a58; version 1.0",
+        "section 第 3 节：审批与未知信息; chars 1-95; chunk-7f705c5f6b4ce7f26e1d591d778fd5692ad290a4257b476a5d06e9e4d472363f; version 1.0"
+      ]
+    }
+  ],
+  "report_error": null,
+  "evaluation": {
+    "state_valid": true,
+    "rendering_consistent": true,
+    "task_execution_success_rate": 1.0,
+    "critic_task_coverage": 1.0,
+    "candidate_evidence_count": 3,
+    "accepted_evidence_count": 3,
+    "evidence_issue_count": 0,
+    "report_paragraph_citation_coverage": 1.0,
+    "report_source_count": 1,
+    "retry_count": 0,
+    "research_status": "sufficient",
+    "report_status": "generated",
+    "semantic_support_verified": false,
+    "requirement_checks_enabled": true,
+    "report_requirement_coverage": 1.0
+  }
+}
